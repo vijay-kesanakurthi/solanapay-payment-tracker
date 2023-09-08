@@ -21,6 +21,7 @@ export default function Main() {
     const fetchWebhook = async () => {
       try {
         const data = await fetch("api/webhooks");
+        console.log("data", data);
         const web: EnrichedTransaction[] = await data.json();
         console.log("webhook", web);
 
@@ -53,18 +54,6 @@ export default function Main() {
   useEffect(() => {
     const addAddressIfNotExists = async () => {
       try {
-        // const helius = new Helius(process.env.NEXT_PUBLIC_HELIUS_API);
-
-        // const webhook: Webhook = await helius.getWebhookByID(
-        //   process.env.NEXT_PUBLIC_WEBHOOK_ID
-        // );
-
-        // const address = webhook.accountAddresses;
-        // if (!address.includes(publicKey?.toBase58()))
-        //   await helius.appendAddressesToWebhook(
-        //     process.env.NEXT_PUBLIC_WEBHOOK_ID,
-        //     [publicKey?.toBase58()]
-        //   );
         const pubkey = publicKey?.toBase58();
         const res = await fetch("api/helius", {
           method: "POST",
