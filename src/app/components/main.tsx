@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
 import { useSpeechSynthesis } from "react-speech-kit";
-
-import {
-  // enums
-  Helius,
-  Webhook,
-} from "helius-sdk";
 import QR from "./qr";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { EnrichedTransaction } from "helius-sdk";
 import TransactionCard from "./transactioncard";
+
+const TRASACTION_LEN = 6;
 
 export default function Main() {
   const [transactions, setTransactions] = useState<EnrichedTransaction[]>([]);
@@ -21,18 +17,24 @@ export default function Main() {
     const fetchWebhook = async () => {
       try {
         const data = await fetch("api/webhooks");
-        console.log("data", data);
+
         const web: EnrichedTransaction[] = await data.json();
-        console.log("webhook", web);
 
         const webdata = web.filter(
           (e: any) => e?.accountData[1].account === publicKey?.toBase58()
         );
         console.log("webdata", webdata);
         if (webdata.length > 0) {
-          setTransactions([...transactions, ...webdata]);
+          setTransactions((e) => [
+            ...webdata.reverse(),
+            ...e.slice(0, TRASACTION_LEN - webdata.length),
+          ]);
           webdata.forEach((e: any) => {
-            speak({ text: `Recieved ${e?.description.split(" ")[2]} SOL` });
+            speak({
+              text: `Recieved ${e?.description.split(" ")[2]} ${
+                e?.description.split(" ")[3]
+              }`,
+            });
           });
         }
         console.log("transactions", transactions);
@@ -63,6 +65,7 @@ export default function Main() {
           },
           body: JSON.stringify({ publicKey: pubkey }),
         });
+        console.log("res", res);
 
         res.ok
           ? setFetchData(true)
@@ -75,17 +78,20 @@ export default function Main() {
   }, [publicKey]);
 
   return (
-    <div className="flex flex-row justify-evenly">
+    <div className="flex flex-col md:flex-row  sm:items-center justify-evenly mb-10  ">
       <QR />
       <div className="text-2xl  flex-2">
         {transactions.length === 0 ? (
-          <h1 className="text-3xl m-12">No transactions</h1>
+          <h1 className="text-3xl font-semibold m-12">No transactions</h1>
         ) : (
           <div className="">
-            <h1 className="text-3xl m-12 text-center "> Transactions</h1>
-            <div className="grid grid-cols-2 gap-3">
+            <h1 className="text-3xl font-semibold m-12 text-center ">
+              {" "}
+              Transactions
+            </h1>
+            <div className="grid xl:grid-cols-2  gap-3 grid-cols-1">
               {transactions.map((e, i) => (
-                <TransactionCard transaction={e} key={i} />
+                <TransactionCard transaction={e} key={i} index={i} />
               ))}
             </div>
           </div>

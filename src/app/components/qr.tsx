@@ -32,9 +32,9 @@ export default function QR() {
 
   return (
     <div>
-      <div className="">
-        <h1 className="text-3xl m-12">Scan and pay</h1>
-        <div ref={qrRef}></div>
+      <div className=" flex flex-col items-center">
+        <h1 className="text-3xl m-12  font-semibold">Scan and pay</h1>
+        <div className="" ref={qrRef}></div>
       </div>
     </div>
   );

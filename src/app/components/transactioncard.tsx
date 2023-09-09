@@ -3,15 +3,22 @@ import { format } from "timeago.js";
 
 export default function TransactionCard({
   transaction,
+  index,
 }: {
   transaction: EnrichedTransaction;
+  index: number;
 }) {
   return (
-    <div className=" shadow-lg rounded-sm overflow-hidden bg-[rgb(234, 239, 230)] backdrop-blur-2xl border-teal-700 border w-full text-black md:w-96">
+    <div
+      className={`${
+        index === 0 && "animate-in fade-in-100 slide-in-from-left-96"
+      } shadow-lg rounded-sm overflow-hidden bg-[rgb(234, 239, 230)] backdrop-blur-2xl border-teal-700 border  w-full text-black md:w-96`}
+    >
       <div className="p-2">
         <div className="flex justify-between items-center">
           <h3 className="text-lg font-semibold text-green-600 ">
             + {transaction.description.split(" ")[2]}
+            {transaction?.description.split(" ")[3]}
           </h3>
           <span className=" text-sm">
             {format(transaction.timestamp * 1000)}
