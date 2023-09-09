@@ -59,7 +59,7 @@ Forwarding   https://5922-160-238-74-75.ngrok-free.app -> http://localhost:3000
 ```
 
   - Copy this URL, go to your [Helius dashboard](https://dev.helius.xyz/dashboard/app). Click on **Webhooks** and then **Create Webhook**. Give your webhook a name and paste the URL.
-![webhook](public/images/webhook.png)
+![webhook](public/images/webhook.png | width=100)
 
 - Configure the environment variables:
   - Rename the `.env.local.example` file in the root directory of the project to `.env.local` and add the following environment variables:
