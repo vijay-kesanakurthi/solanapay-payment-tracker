@@ -1,8 +1,8 @@
 # SolanaPay Payment Tracker for Marchants
 
-This project is a web application that allows users to track and receive notifications for payments made to their Solana wallet. This project is useful for merchants who accept Solana payments and want to get notified without checking their wallet every time.
+This project is a web application that allows users to track and receive notifications for payments made to their Solana wallet. This project is useful for merchants who accept Solana payments and want to get notified without checking their wallet every time. 
 
-![Screenshot of the web application](public/images/sneakpeak.png)
+[![Screenshot of the web application](public/images/sneakpeak.png)](https://track-transaction.vercel.app)
 
 ## Why would you build this?
 
@@ -59,7 +59,10 @@ Forwarding   https://5922-160-238-74-75.ngrok-free.app -> http://localhost:3000
 ```
 
   - Copy this URL, go to your [Helius dashboard](https://dev.helius.xyz/dashboard/app). Click on **Webhooks** and then **Create Webhook**. Give your webhook a name and paste the URL.
-![webhook](public/images/webhook.png | width=100)
+  
+<img src="public/images/webhook.png" width=400>
+
+
 
 - Configure the environment variables:
   - Rename the `.env.local.example` file in the root directory of the project to `.env.local` and add the following environment variables:
