@@ -1,7 +1,7 @@
-# SolanaPay Payment Tracker for Marchants
+# [SolanaPay Payment Tracker for Marchants](https://track-transaction.vercel.app/)
 
-This project is a web application that allows users to track and receive notifications for payments made to their Solana wallet. This project is useful for merchants who accept Solana payments and want to get notified without checking their wallet every time. 
-
+This project is a web application that allows users to track and receive notifications for payments made to their Solana wallet. This project is useful for merchants who accept Solana payments and want to get notified without checking their wallet every time.
+ 
 [![Screenshot of the web application](public/images/sneakpeak.png)](https://track-transaction.vercel.app)
 
 ## Why would you build this?
