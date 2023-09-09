@@ -2,7 +2,7 @@
 
 This project is a web application that allows users to track and receive notifications for payments made to their Solana wallet. This project is useful for merchants who accept Solana payments and want to get notified without checking their wallet every time.
 
-![Screenshot of the web application]
+![Screenshot of the web application](public/images/sneakpeak.png)
 
 ## Why would you build this?
 
@@ -59,7 +59,7 @@ Forwarding   https://5922-160-238-74-75.ngrok-free.app -> http://localhost:3000
 ```
 
   - Copy this URL, go to your [Helius dashboard](https://dev.helius.xyz/dashboard/app). Click on **Webhooks** and then **Create Webhook**. Give your webhook a name and paste the URL.
-![webhook]
+![webhook](public/images/webhook.png)
 
 - Configure the environment variables:
   - Rename the `.env.local.example` file in the root directory of the project to `.env.local` and add the following environment variables:
