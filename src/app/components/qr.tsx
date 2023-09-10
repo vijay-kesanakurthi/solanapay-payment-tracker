@@ -9,12 +9,11 @@ export default function QR() {
   useEffect(() => {
     const reference = Keypair.generate().publicKey;
     const label = "Jungle Cats store";
-    const message = "Jungle Cats store - your order - #001234";
-    const memo = "JC#4098";
+    const message = "Thanks for visiting, Jungle Cats store";
+    const memo = "Have a great day, Visit again";
 
     const mintUrl = encodeURL({
       recipient: publicKey,
-      // amount,
       reference,
       label,
       message,

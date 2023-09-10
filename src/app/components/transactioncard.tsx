@@ -8,10 +8,13 @@ export default function TransactionCard({
   transaction: EnrichedTransaction;
   index: number;
 }) {
+  console.log(index);
   return (
     <div
       className={`${
-        index === 0 && "animate-in fade-in-100 slide-in-from-left-96"
+        index === 0
+          ? "animate-in fade-in-30 slide-in-from-top-1/3 transition-all delay-75 duration-500"
+          : ""
       } shadow-lg rounded-sm overflow-hidden bg-[rgb(234, 239, 230)] backdrop-blur-2xl border-teal-700 border  w-full text-black md:w-96`}
     >
       <div className="p-2">

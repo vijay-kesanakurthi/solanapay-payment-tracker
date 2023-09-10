@@ -5,7 +5,7 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { EnrichedTransaction } from "helius-sdk";
 import TransactionCard from "./transactioncard";
 
-const TRASACTION_LEN = 6;
+const TRASACTION_LEN = 10;
 
 export default function Main() {
   const [transactions, setTransactions] = useState<EnrichedTransaction[]>([]);
@@ -23,7 +23,6 @@ export default function Main() {
         const webdata = web.filter(
           (e: any) => e?.accountData[1].account === publicKey?.toBase58()
         );
-        console.log("webdata", webdata);
         if (webdata.length > 0) {
           setTransactions((e) => [
             ...webdata.reverse(),
@@ -37,7 +36,6 @@ export default function Main() {
             });
           });
         }
-        console.log("transactions", transactions);
       } catch (e) {
         console.log(e);
       }
