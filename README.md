@@ -1,27 +1,27 @@
-# [SolanaPay Payment Tracker for Marchants](https://track-transaction.vercel.app/)
+# [SolanaPay Payment Tracker for Marchants](https://track-transaction.vercel.app/) 🚀
 
-This project is a web application that allows users to track and receive notifications for payments made to their Solana wallet. This project is useful for merchants who accept Solana payments and want to get notified without checking their wallet every time.
+This project is a web application that allows users to track and receive notifications for payments made to their Solana wallet. This project is useful for merchants who accept Solana payments and want to get notified without checking their wallet every time. 💸
 
 ![Screenshot of the web application](public/images/sneakpeak.png)
 
-## Why would you build this?
+## Why would you build this? 🤔
 
- SolanaPay is a payment gateway for Solana that enables users to send and receive payments in SOL, the native cryptocurrency of Solana, or any other tokens built on the platform. However, SolanaPay does not provide a user-friendly interface for merchants who want to accept Solana payments and monitor their transactions. This project aims to fill this gap by providing a simple and intuitive web application that generates QR codes for Solana wallet addresses, subscribes to webhooks that listen to incoming transactions, plays sounds and displays cards when payments are received, and shows the history and details of each transaction.
+ SolanaPay is a payment gateway for Solana that enables users to send and receive payments in SOL, the native cryptocurrency of Solana, or any other tokens built on the platform. However, SolanaPay does not provide a user-friendly interface for merchants who want to accept Solana payments and monitor their transactions. This project aims to fill this gap by providing a simple and intuitive web application that generates QR codes for Solana wallet addresses, subscribes to webhooks that listen to incoming transactions, plays sounds and displays cards when payments are received, and shows the history and details of each transaction. 🙌
 
-## Features
+## Features ✨
 
-- Connect your Solana wallet to the web application and automatically generate a QR code for your wallet address that can be scanned by other users to send you payments.
-- Play a sound when a payment is received in SOL.
-- View the cards history of payments received and the details of each transaction.
+- Connect your Solana wallet to the web application and automatically generate a QR code for your wallet address that can be scanned by other users to send you payments. 📲
+- Play a sound when a payment is received in SOL. 🔊
+- View the cards history of payments received and the details of each transaction. 📊
 
-## How it works
+## How it works ⚒️
 
 
 - The project uses [Helius](https://www.helius.xyz/), a webhook service for Solana that allows users to subscribe to the trasaction events on the Solana network. For this project we will listening for transfer event. 
 - The project uses [SolanaPay](https://solanapay.com/), for generating QR code for the connected wallet address.
 - The project uses [Next.js](https://nextjs.org/), a React framework for building fast and scalable web applications with features such as server-side rendering, API routes and [Tailwind](https://tailwindcss.com/) for css.
 
-## Installation
+## Installation 💻
 
 To run the project locally, you need to have the following prerequisites:
 
@@ -82,7 +82,7 @@ npm run dev
 
 
 
-## Usage
+## Usage 🚀
 
 - To connect your Solana wallet to the web application, click on the "Connect Wallet" button on the homepage.t. A QR code for your wallet address will be generated automatically.
 - To listen to incoming transactions to your wallet address, you do not need to do anything else. The web application will automatically start listening to the payments as soon as your wallet is connected. You will see a card and hear a sound when a payment is received in SOL. 
